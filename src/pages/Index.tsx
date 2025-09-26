@@ -1,13 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { HeroSection } from "@/components/ui/hero-section";
+import { FeatureSection } from "@/components/ui/feature-section";
+import { DifferenceSection } from "@/components/ui/difference-section";
+import { AudienceSection } from "@/components/ui/audience-section";
+import { AdvantagesSection } from "@/components/ui/advantages-section";
+import { PossibilitiesSection } from "@/components/ui/possibilities-section";
+import { HowItWorksSection } from "@/components/ui/how-it-works";
+import { AdditionalBenefitsSection } from "@/components/ui/additional-benefits";
+import { CTASection } from "@/components/ui/cta-section";
+import { LeadForm } from "@/components/ui/lead-form";
 
 const Index = () => {
+  const scrollToForm = () => {
+    const formElement = document.getElementById('waitlist-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background">
+      <HeroSection onJoinWaitlist={scrollToForm} />
+      <FeatureSection />
+      <DifferenceSection />
+      <AudienceSection />
+      <AdvantagesSection />
+      <PossibilitiesSection />
+      <HowItWorksSection />
+      <AdditionalBenefitsSection />
+      <CTASection onJoinWaitlist={scrollToForm} />
+      <LeadForm />
+    </main>
   );
 };
 
