@@ -1,3 +1,5 @@
+import { Navigation } from "@/components/ui/navigation";
+import { Footer } from "@/components/ui/footer";
 import { HeroSection } from "@/components/ui/hero-section";
 import { FeatureSection } from "@/components/ui/feature-section";
 import { DifferenceSection } from "@/components/ui/difference-section";
@@ -18,7 +20,8 @@ const Index = () => {
   };
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
+      <Navigation />
       <HeroSection onJoinWaitlist={scrollToForm} />
       <FeatureSection />
       <DifferenceSection />
@@ -29,7 +32,8 @@ const Index = () => {
       <AdditionalBenefitsSection />
       <CTASection onJoinWaitlist={scrollToForm} />
       <LeadForm />
-    </main>
+      <Footer />
+    </div>
   );
 };
 
